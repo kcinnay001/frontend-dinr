@@ -1,0 +1,14 @@
+.container{
+    /* border: 1px solid black; */
+    padding: 10px;
+    padding-top:25px;
+    padding-bottom: 60px;
+}
+
+.microsofticon{
+    margin-left: 25px;
+}
+
+.googleicon{
+    padding-left:25px;
+}

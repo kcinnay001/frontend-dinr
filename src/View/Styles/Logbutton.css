@@ -1,0 +1,28 @@
+.logbutton{
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+    padding-bottom:20px ;
+}
+
+.logbutton button{
+    margin-top: 10px;
+    background-color: rgba(242,87,87,.03);
+    font-family: sans-serif;
+    border:none;
+    padding:15px;
+    letter-spacing: -1px;
+    color:rgba(19, 18, 18, .4);
+    font-weight: bold;
+    width:90%;
+    border-radius: 30px;
+    font-size: 25px;
+}
+
+.logbutton_started{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}

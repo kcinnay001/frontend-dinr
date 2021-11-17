@@ -1,0 +1,45 @@
+.Navbar {
+    width:100vw;
+    /* border:1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.Navbar-hamburger {
+    margin:10px;
+    margin-left: 0px;
+    width: 33.3%;
+    padding: 10px;
+    height: 100%;
+    color:rgba(22, 162, 152, 0.2);
+    /* border:1px solid black; */
+    font-size: 25px;
+    display: flex;
+    justify-content: start;
+}
+
+.Navbar-logout {
+    margin:10px;
+    margin-right: 0px;
+    width: 33.3%;
+    padding: 10px;
+    height: 100%;
+    color:rgba(22, 162, 152, 0.2);
+    /* border:1px solid black; */
+    font-size: 30px;
+    display: flex;
+    justify-content: end;
+}
+
+.Navbar-profile{
+    margin:10px;
+    width: 33.3%;
+    padding: 10px;
+    height: 100%;
+    color:rgba(22, 162, 152, 0.2);
+    /* border:1px solid black; */
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}

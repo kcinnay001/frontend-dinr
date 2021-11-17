@@ -1,0 +1,39 @@
+.Home {
+    /* border: 1px solid black; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info{
+    /* border:1px solid yellow;  */
+    border-bottom:1px solid rgba(0,0,0,.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    
+}
+
+.team {
+    
+    color:rgba(22, 162, 152, 0.2);
+}
+
+.name {
+    padding-top: 10px;
+    color:rgba(29, 215, 203, 1);
+}
+
+.date {
+    padding-top: 30px;
+    color:rgba(19, 18, 18, .4);
+    word-spacing: 8px;
+    letter-spacing: 10px;
+    font-weight:600;
+    font-size: 28px;
+}

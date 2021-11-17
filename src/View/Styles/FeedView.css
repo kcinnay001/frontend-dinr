@@ -1,0 +1,38 @@
+.feed{
+    /* border:1px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top:10px ;
+}
+
+.active {
+    /* border:1px solid black; */
+    margin-top: 10px;
+    margin-right: 50px;
+    border-bottom: 1px solid red;
+}
+
+.not_active {
+    /* border:1px solid black; */
+    border-bottom: 1px solid red;
+}
+
+.feed_users{
+    /* border-top:1px solid black; */
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size:20px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.feed_user_name {
+    color: #1DD7CB;
+}
+
+.feed_user_time {
+    color:rgba(22,162,152,.2)
+}

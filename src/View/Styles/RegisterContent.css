@@ -1,0 +1,38 @@
+.register_content_form{
+    margin-top:50px;
+    /* border:1px solid black; */
+    display: flex;
+    flex-direction: column;
+    padding-left:35px;
+    padding-right:35px;
+}
+
+.register_content_form input{
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding-bottom:5px ;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .10);
+    font-weight: lighter;
+    color:rgba(0, 0, 0, .40);
+}
+
+.register_content_form input::placeholder{
+    color: rgba(0, 0, 0, .20);
+}
+
+.register_content_form input:focus{
+    outline: none;
+}
+
+
+.register_content_form button{
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    border:none;
+    background-color:#61E8E1;
+    font-weight: bold;
+}
+

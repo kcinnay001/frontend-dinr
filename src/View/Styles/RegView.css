@@ -1,0 +1,43 @@
+.reg_header{
+    /* border: 1px solid black; */
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-top:80px;
+}
+
+.reg_header_title{
+    font-size: 50px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #1DD7CB;
+}
+
+.reg_options{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.reg_register{
+    margin-left: 15px;
+    padding: 10px;
+}
+
+.reg_login{
+    margin-right: 15px;
+    padding: 10px;
+}
+
+.reg_line {
+    border: 1px solid rgba(0, 0, 0, .05);
+}
+
+.reg_body_container{
+    border: 1px solid rgba(0, 0, 0, .1);
+    margin: 25px;
+    border-radius:25px ;
+}
