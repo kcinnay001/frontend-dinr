@@ -38,7 +38,7 @@ const RegisterationBody = ({setIsAuth}) => {
                     </div>
                     {isLogin && <LoginBodyContent setIsAuth={setIsAuth}/>}
                     {isRegister && <RegistrationBodyContent setIsAuth={setIsAuth}/>}                    
-                    <Linebreak/>
+                    {/* <Linebreak/> */}
                     <ExternalLogin/>
                 </div>
             </div>

@@ -26,11 +26,11 @@ const Navbar = ({value,naviagtion,setIsAuth}) => {
         <div className='Navbar'>
            <div className='Navbar-hamburger'>
                 <Link to={naviagtion} style={{ textDecoration: 'none',  color:'rgba(22, 162, 152, 0.2)'}}>
-                    <FontAwesomeIcon icon={value}></FontAwesomeIcon>
+                    {/* <FontAwesomeIcon icon={value}></FontAwesomeIcon> */}
                 </Link>
             </div>
            <div className='Navbar-profile'>
-               <FontAwesomeIcon onClick={()=>setIsOpen(true)} icon={faUsers}></FontAwesomeIcon>
+               {/* <FontAwesomeIcon onClick={()=>setIsOpen(true)} icon={faUsers}></FontAwesomeIcon> */}
             </div>
            <div className='Navbar-logout'>
                <Link to='/' onClick={logOut} style={{ textDecoration: 'none',  color:'rgba(22, 162, 152, 0.2)'}}>

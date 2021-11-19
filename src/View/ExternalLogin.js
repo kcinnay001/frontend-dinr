@@ -7,8 +7,8 @@ import microsofticon from './microsofticon.png'
 const ExternalLogin = () => {
     return (
         <div className='container'>
-            <img src={microsofticon} className='microsofticon'/>
-            <img src={googleicon} className='googleicon'/>
+            {/* <img src={microsofticon} className='microsofticon'/>
+            <img src={googleicon} className='googleicon'/> */}
         </div>
     )
 }

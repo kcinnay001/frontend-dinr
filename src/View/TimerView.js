@@ -1,14 +1,21 @@
 import React,{ useEffect, useState } from 'react'
 import {ms,s,m,h,d} from 'time-convert'
 import './Styles/Model.css'
+import Axios from 'axios' 
 
 const TimerView = ({onClose, timeSet}) => {
     let newTime = new Date()
 
     // States 
-    const [seconds,setSeconds] = useState(0)
-    const [minutes,setMinutes] = useState(0)
-    const [hours,setHours] = useState(0)
+    const [seconds,setSeconds] = useState('00')
+    const [minutes,setMinutes] = useState('00')
+    const [hours,setHours] = useState('00')
+    const [userId,setUserId] = useState(0)
+    const [ndate,setNDate] = useState('')
+    const [duration,setDuration] = useState(0)
+    const [finalTime,setFinalTime] = useState(0)
+    const [status,setStatus] = useState()
+    const [currentTimes,setCurrentTimes] = useState()
 
     // variables 
     
@@ -16,6 +23,9 @@ const TimerView = ({onClose, timeSet}) => {
     let cMinutes = newTime.getMinutes()
     let cSeconds = newTime.getSeconds()
 
+ 
+
+    
     // Functions
 
     // func: to check whether the number entered dosent exceed to numbers
@@ -31,39 +41,66 @@ const TimerView = ({onClose, timeSet}) => {
         }
     }
 
-    // check to time 
-    const totalTime = () => {
-        // workout difference in current time a chosen time 
+    const setTime = () => { 
+        let newDate = new Date()
+        let date = newDate.getDate();
+        let month = newDate.getMonth() + 1;
+        let year = newDate.getFullYear();
 
-        let totalTime = parseFloat(hours*3600) + parseFloat(seconds) + parseFloat(minutes*60);
-        let totalCurrentTime = cHours*60 + cMinutes + 60/cSeconds;
-        //let finalTime = 1215.6666666666667
+        // console.log(hours,minutes,seconds)
+        // console.log(cHours,cMinutes,cSeconds)
 
-        let toHours = parseFloat((totalTime/3600).toString().split('.')[0])
-        let toMinutes = parseFloat((('0.' +(totalTime/3600).toString().split('.')[1])*60).toString().split('.')[0])
-        let toSeconds = parseInt(seconds)
+        const totalTimeInMinutes = (parseFloat(hours) * 60) + parseFloat(minutes) + (parseFloat(seconds) /60)
+        const totalCurrentTimeInMinutes = (cHours * 60) + cMinutes + (cSeconds/60)
+        // console.log('total time minutes:',totalTimeInMinutes)
+        // console.log('total current time minutes:',totalCurrentTimeInMinutes)
+        // console.log('finishing time', totalCurrentTimeInMinutes + totalTimeInMinutes)
 
-        
-        console.log('final time:',totalCurrentTime+((totalTime/3600)*60))
-        console.log('current time:',totalCurrentTime)
+        const ftime = totalCurrentTimeInMinutes + totalTimeInMinutes
 
-        console.log('chosen time in seconds:',totalTime)
-        console.log('chosen time in minutes:',(totalTime/3600)*60)
-        console.log('timeleft:', totalCurrentTime+((totalTime/3600)*60) - totalCurrentTime)
-        // set to local storage
+            if(totalTimeInMinutes> 0){
+                // console.log('api request')
+                Axios({
+                    method:'PUT',
+                    data:{
+                        id:userId,
+                        date:date+'/'+month+'/'+year,
+                        duration:totalTimeInMinutes.toString(),
+                        finalTime:ftime.toString(),
+                        status:true
+                    },
+                    withCredentials:true,
+                    url:'http://localhost:4000/time/set'
+                }).then((result)=>{
+                    onClose()
+                    timeSet()
+                    window.location.reload()
+                })
+            }     
+        }
+
+        const getUser = () => {
+            Axios({
+                method:'GET',
+                withCredentials:true,
+                url:'http://localhost:4000/user/login'
+            }).then((res)=> {
+                setUserId(res.data._id)
+                Axios({
+                    method:'GET',
+                    withCredentials:true,
+                    url:'http://localhost:4000/time/'+res.data._id
+                }).then((times)=>{
+                // console.log(times)
+                    setCurrentTimes(times)
+                })
+            }) 
     }
-
-    const setTime = () => {
-        onClose()
-        timeSet()
-        
-
-    // when time is set update the time in the database for the user
-    }
-
+    // console.log(currentTimes)
     useEffect(()=>{
+        getUser()
         CheckNumber()
-        totalTime()
+        // totalTime()
 
     
     },[seconds,hours,minutes])
